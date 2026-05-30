@@ -26,7 +26,8 @@ int output (char *out, unsigned int size){
 
 int output_bin (unsigned char *out, unsigned int size){
 	if(size == 1){
-		printf("\r%08b",(unsigned int)*out);
+		printf("\33[2K\r");
+		printf("\r%08b --- %d",(unsigned int)*out, (unsigned int)*out);
 	} else {
 		printf("\r%016b",(*(unsigned int*)out) & 0xFFFF );
 	}
